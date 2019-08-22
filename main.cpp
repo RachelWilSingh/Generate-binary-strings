@@ -5,6 +5,10 @@
 #include <vector>
 using namespace std;
 
+/*
+Add 1 to the digit given. If it is 2, then set it to 0 and "carry the 1"
+by calling the same function again, but on the digit to the left (index - 1)
+*/
 void IncrementString( vector<int>& arr, int digit )
 {
     if ( digit == (int)arr.size() || digit == -1 ) { /* doesn't work */ return; }
@@ -18,6 +22,9 @@ void IncrementString( vector<int>& arr, int digit )
     }
 }
 
+/*
+Display the items in the array
+*/
 void DisplayArray( vector<int>& arr )
 {
     for ( unsigned int i = 0; i < arr.size(); i++ )
@@ -43,7 +50,7 @@ int main()
     }
     DisplayArray( arr );
     
-    // Generate 10 numbers
+    // There will be 2^size total strings generated
     int stringCount = pow(2, size);
     for ( int i = 0; i < stringCount; i++ )
     {
